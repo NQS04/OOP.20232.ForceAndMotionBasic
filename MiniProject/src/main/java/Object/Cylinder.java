@@ -1,10 +1,11 @@
 package main.java.Object;
 
+import main.java.force.ChangeableForce;
+
 public class Cylinder extends ObjectType {
     private double radius;
-    public Cylinder(double mass, double radius) {
-        super(mass);
-        this.radius = radius;
+    public Cylinder(double mass, double radius, double x, double y, ChangeableForce actorForce, Surface surface) {
+        //
     }
 
     @Override

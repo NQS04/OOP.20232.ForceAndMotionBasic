@@ -4,8 +4,7 @@ public class Cube extends ObjectType {
     private double sideLength;
 
     public Cube(double mass, double sideLength) {
-        super(mass);
-        this.sideLength = sideLength;
+        //
     }
 
     @Override
