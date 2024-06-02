@@ -15,6 +15,12 @@ public class Surface {
     public void setKineticFriction(double kineticFriction) {
         this.kineticFriction = kineticFriction;
     }
+    public double getStaticFriction() {
+        return staticFriction;
+    }
+    public double getKineticFriction() {
+        return kineticFriction;
+    }
 
     public double calFriction(ObjectType object) {
         if (object.velocity == 0) {
