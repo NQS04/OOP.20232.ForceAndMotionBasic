@@ -1,33 +1,27 @@
 package main.java.Object;
 
 public class Surface {
-    private double staticFriction;
-    private double kineticFriction;
+    private double staticFrictionCoef;
+    private double kineticFrictionCoef;
 
-    public Surface(double staticFriction, double kineticFriction) {
-        this.staticFriction = staticFriction;
-        this.kineticFriction = kineticFriction;
-    }
-    //Setter
-    public void setStaticFriction(double staticFriction) {
-        this.staticFriction = staticFriction;
-    }
-    public void setKineticFriction(double kineticFriction) {
-        this.kineticFriction = kineticFriction;
-    }
-    public double getStaticFriction() {
-        return staticFriction;
-    }
-    public double getKineticFriction() {
-        return kineticFriction;
+    public Surface(double staticFrictionCoef, double kineticFrictionCoef) {
+        super();
+        this.staticFrictionCoef = staticFrictionCoef;
+        this.kineticFrictionCoef = kineticFrictionCoef;
     }
 
-    public double calFriction(ObjectType object) {
-        if (object.velocity == 0) {
-            return staticFriction*object.mass*9.81;
-        }
-        else {
-            return kineticFriction*object.mass*9.81;
-        }
+    public void setStaticFrictionCoef(double staticFrictionCoef) {
+        this.staticFrictionCoef = staticFrictionCoef;
     }
+    public void setKineticFrictionCoef(double kineticFriction) {
+        this.kineticFrictionCoef = kineticFrictionCoef;
+    }
+    public double getStaticFrictionCoef() {
+        return staticFrictionCoef;
+    }
+    public double getKineticFrictionCoef() {
+        return kineticFrictionCoef;
+    }
+
 }
+

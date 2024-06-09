@@ -1,79 +1,141 @@
 package main.java.Object;
 
-import javafx.scene.shape.Rectangle;
 import main.java.exception.InvalidInputException;
-
-import main.java.exception.*;
-import main.java.force.*;
+import main.java.force.ChangeableForce;
+import main.java.force.NonChangeableForce;
 
 public abstract class ObjectType {
-    protected double mass;
-    protected double x;
-    protected double y;
-    protected double velocity;
-    protected double acceleration;
-    protected Rectangle shape;
-    protected Surface surface;
 
+    private double mass;
     protected NonChangeableForce gravitationalForce;
     protected NonChangeableForce normalForce;
     protected ChangeableForce actorForce;
     protected ChangeableForce frictionalForce;
+    protected Surface surface;
+    private double x;
+    private double y;
+    private double velocity;
+    private final double MAX_SPEED = 60;
+    private double acceleration;
 
-    public ObjectType(double mass, double x, double y, ChangeableForce actorForce, Surface surface) throws InvalidInputException {
-        if(mass <= 0) {
-            throw new InvalidInputException("Error, pls input a positive value!");
-        }
+    protected double angularPosition;
+    protected double angularVelocity;
+    protected double angularAcceleration;
 
-        this.mass = mass;
-        this.x = x;
-        this.y = y;
-        this.velocity = 0;
-        this.acceleration = 0;
-        this.surface = surface;
-        this.gravitationalForce = new NonChangeableForce(x, y, mass*10);
-        this.normalForce = new NonChangeableForce(x, y, mass*10);
-        this.frictionalForce = new ChangeableForce(x, 0, 0);
-        this.actorForce = actorForce;
+    public double getNormalForce()
+    {
+        return normalForce.getMagnitude();
     }
-
-    public void setShape(Rectangle shape) {
-        this.shape = shape;
+    public double getMass() {
+        return mass;
     }
     public void setMass(double mass) {
         this.mass = mass;
     }
-    public void applyForce(double force) {
-        this.acceleration = force/mass;
+    public double getVelocity() {
+        return velocity;
+    }
+    public double getAcceleration() {
+        return acceleration;
+    }
+    public double getX() {
+        return x;
+    }
+    public double getY() {
+        return y;
     }
 
+
+    public double getAngularPosition() {
+        return angularPosition;
+    }
+
+    public double getAngularVelocity() {
+        return angularVelocity;
+    }
+
+    public double getAngularAcceleration() {
+        return angularAcceleration;
+    }
+    public ObjectType(double mass, double x, double y, ChangeableForce actorForce, Surface surface) throws InvalidInputException {
+        super();
+        if (mass <= 0) {
+            throw new InvalidInputException("Mass of object must be positive");
+        }
+        this.mass = mass;
+        this.x = x;
+        this.y = y;
+        this.gravitationalForce = new NonChangeableForce(this.x, this.y, this.mass*10);
+        this.normalForce = new NonChangeableForce(this.x, this.y, this.gravitationalForce.getMagnitude());
+        this.frictionalForce = new ChangeableForce(this.x, 0, 0);
+        this.actorForce = actorForce;
+        this.surface = surface;
+    }
+
+
+    public double getGravitationalForceMagnitude() {
+        return gravitationalForce.getMagnitude();
+    }
+    public double getNormalForceMagnitude() {
+        return normalForce.getMagnitude();
+    }
+    public double getActorForceMagnitude() {
+        return actorForce.getMagnitude();
+    }
+    public double getFrictionalForceMagnitude() {
+        return frictionalForce.getMagnitude();
+    }
     public double getSumForce() {
-        return this.actorForce.getMagnitude() - this.frictionalForce.getMagnitude(); 
+        //Base direction: Right
+        return this.actorForce.getMagnitude() - this.frictionalForce.getMagnitude();
     }
 
-    public void updateVelocity(double deltaT) {
-        this.velocity = this.velocity + this.acceleration*deltaT;
+    //If the speed of the object surpasses a threshold, then we have to stop applying force on it
+    //otherwise the speed can reach infinity at some point
+    public boolean validateSpeedThreshold() {
+        if ( Math.abs(this.velocity) >= this.MAX_SPEED ) {
+            return true;
+        }
+        return false;
     }
+
+    //Method to update frictional force
+    public abstract void updateFrictionalForce();
+
+    //Method to update the acceleration
     public void updateAcceleration() {
-        this.acceleration = this.getSumForce()/this.mass;
+        this.acceleration = this.getSumForce() / this.mass;
     }
 
+    //Method to update velocity after a time interval deltaT
+    public void updateVelocity(double deltaT) {
+        this.velocity = this.velocity + this.acceleration * deltaT;
+    }
+
+    //Method to update position after a time interval deltaT
     public void updatePosition(double deltaT) {
-        this.x = this.x + this.velocity*deltaT;
+        this.x = this.x + this.velocity * deltaT;
     }
 
-    public void updateForceRoot() {
-		this.gravitationalForce.setRootX(this.x);
-		this.normalForce.setRootX(this.x);
-		this.actorForce.setRootX(this.x);
-		this.frictionalForce.setRootX(this.x);
+    public void updateForcesRoots() {
+        this.gravitationalForce.setRootX(this.x);
+        this.normalForce.setRootX(this.x);
+        this.actorForce.setRootX(this.x);
+        this.frictionalForce.setRootX(this.x);
     }
 
-    public void reset() {
-        this.x = 0;
-        this.y = 0;
-        this.acceleration = 0;
-        shape.setTranslateX(200);
+    //Method to update angular acceleration
+    public abstract void updateAngularAcceleration();
+
+    public void updateAngularVelocity(double deltaT) {
+        this.angularVelocity = this.angularVelocity + this.angularAcceleration * deltaT;
     }
-    public abstract double getSize();
+
+    public void updateAngularPosition(double deltaT) {
+        this.angularPosition = this.angularPosition + this.angularVelocity * deltaT;
+    }
+
+    //Method to update the state of the object after a time interval deltaT
+    public abstract void proceed(double deltaT);
+
 }
