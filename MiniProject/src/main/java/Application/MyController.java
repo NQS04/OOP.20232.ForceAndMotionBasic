@@ -1,7 +1,7 @@
 package main.java.Application;
 
-import exception.InvalidInputException;
-import force.ChangeableForce;
+import main.java.exception.*;
+import main.java.force.*;
 import javafx.animation.AnimationTimer;
 import javafx.beans.property.LongProperty;
 import javafx.beans.property.SimpleLongProperty;
@@ -580,43 +580,43 @@ public class MyController implements Initializable {
 		dialog.getDialogPane().getButtonTypes().add(btnConfirm);
 
 		dialog.setResultConverter(new Callback<ButtonType, String>() {
-			@Override
-			public String call(ButtonType b) { 
-				if (b == btnConfirm) {
-					try {
-						if (type.equals("cube")) {
-							obj = new Cube(Double.parseDouble(txtMass.getText()), Double.parseDouble(txtLength.getText()), force, surface);
-							setBackgroundCube(Double.parseDouble(txtLength.getText()));
-							cubeChosen = true;
-						} else if (type.equals("cylinder")) {
-							obj = new Cylinder(Double.parseDouble(txtMass.getText()), Double.parseDouble(txtRadius.getText()), force, surface);
-							setBackgroundCylinder(Double.parseDouble(txtRadius.getText()));
-							cylinderChosen = true;
-						}
-					} catch (NumberFormatException | InvalidInputException e) {
-						if (e instanceof NumberFormatException) {
-							Dialog<String> dialog = new Dialog<>();
-							dialog.setTitle("Exception");
+    @Override
+    public String call(ButtonType b) { 
+        if (b == btnConfirm) {
+            try {
+                if (type.equals("cube")) {
+                    obj = new Cube(Double.parseDouble(txtMass.getText()), Double.parseDouble(txtLength.getText()), force, surface);
+                    setBackgroundCube(Double.parseDouble(txtLength.getText()));
+                    cubeChosen = true;
+                } else if (type.equals("cylinder")) {
+                    obj = new Cylinder(Double.parseDouble(txtMass.getText()), Double.parseDouble(txtRadius.getText()), force, surface);
+                    setBackgroundCylinder(Double.parseDouble(txtRadius.getText()));
+                    cylinderChosen = true;
+                }
+            } catch (NumberFormatException | InvalidInputException e) {
+                if (e instanceof NumberFormatException) {
+                    // Assuming dialog is already defined and accessible here
+                    dialog.setTitle("Exception");
 
-							DialogPane pane = dialog.getDialogPane();
-							pane.getStylesheets().add(getClass().getResource("../main/application.css").toExternalForm());
-							pane.getStyleClass().add("inputDialog");
+                    DialogPane pane = dialog.getDialogPane();
+                    pane.getStylesheets().add(getClass().getResource("../main/application.css").toExternalForm());
+                    pane.getStyleClass().add("inputDialog");
 
-							Label error = new Label("Input error: Not a number");
-							error.setTextFill(Paint.valueOf("#8be9fd"));
+                    Label error = new Label("Input error: Not a number");
+                    error.setTextFill(Paint.valueOf("#8be9fd"));
 
-							pane.setContent(error);
+                    pane.setContent(error);
 
-							ButtonType btnConfirm = new ButtonType("Ok", ButtonData.OK_DONE);
-							dialog.getDialogPane().getButtonTypes().add(btnConfirm);
+                    // Assuming btnConfirm is already defined and accessible here
+                    // Ensure dialog's button types are set appropriately outside this block if needed
 
-							dialog.showAndWait();
-						}	
-					}
-				}
-				return null;
-			}
-		});
+                    dialog.showAndWait();
+                }   
+            }
+        }
+        return null;
+    }
+});
 
 		dialog.showAndWait();
 	}

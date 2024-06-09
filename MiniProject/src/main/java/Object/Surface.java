@@ -13,7 +13,7 @@ public class Surface {
     public void setStaticFrictionCoef(double staticFrictionCoef) {
         this.staticFrictionCoef = staticFrictionCoef;
     }
-    public void setKineticFrictionCoef(double kineticFriction) {
+    public void setKineticFrictionCoef(double kineticFrictionCoef) {
         this.kineticFrictionCoef = kineticFrictionCoef;
     }
     public double getStaticFrictionCoef() {
