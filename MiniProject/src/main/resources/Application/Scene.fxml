@@ -19,22 +19,32 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/Background.jpg" />
+            <Image url="@../image/Background2.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="1280.0" fitWidth="1280.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/Base%20ground.jpg" />
+            <Image url="@../image/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="1280.0" layoutY="44.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/landscape.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="1280.0" fitWidth="1280.0" layoutX="1280.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/Base%20ground.jpg" />
+            <Image url="@../image/Background.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="1280.0" layoutX="1280.0" layoutY="44.0" pickOnBounds="true">
+         <image>
+            <Image url="@../image/landscape.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="400.0" fitWidth="1280.0" layoutX="1280.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../image/Background.jpg" />
+            <Image url="@../image/Background2.jpg" />
          </image>
       </ImageView>
       <Pane layoutX="389.0" layoutY="541.0" opacity="0.7" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 10px;">
@@ -68,8 +78,8 @@
             <Circle fx:id="choiceCylinder" fill="#64e388" layoutX="250.0" layoutY="80.0" onMouseDragged="#cylinderDragged" onMouseReleased="#cylinderReleased" radius="50.0" stroke="BLACK" strokeType="INSIDE" />
          </children>
       </Pane>
-      <Rectangle fx:id="bgCube" arcHeight="5.0" arcWidth="5.0" fill="#64e388e3" height="150.0" layoutX="564.0" layoutY="252.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
-      <Circle fx:id="bgCylinder" fill="#66e389e1" layoutX="641.0" layoutY="328.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
+      <Rectangle fx:id="bgCube" arcHeight="5.0" arcWidth="5.0" fill="#64e388e3" height="150.0" layoutX="564.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" width="150.0" />
+      <Circle fx:id="bgCylinder" fill="#66e389e1" layoutX="640.0" layoutY="326.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
       <Line fx:id="horizontalLine" endX="100.0" layoutX="640.0" layoutY="300.0" startX="-100.0" />
       <Line fx:id="verticalLine" endX="0.0" endY="-100.0" layoutX="640.0" layoutY="300.0" startX="0.0" startY="100.0" />
       <ImageView fx:id="frictionalArrow" fitHeight="89.0" fitWidth="348.0" layoutX="465.0" layoutY="274.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.75">
