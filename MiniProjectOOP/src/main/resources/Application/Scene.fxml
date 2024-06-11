@@ -27,7 +27,7 @@
             <Image url="@../image/Grass.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="bg2" fitHeight="925.0" fitWidth="1633.0" layoutX="1363" layoutY="-433.0" pickOnBounds="true" preserveRatio="false" style="-fx-background-color: #282A36;">
+      <ImageView fx:id="bg2" fitHeight="925.0" fitWidth="1633.0" layoutX="1363.0" layoutY="-433.0" pickOnBounds="true" preserveRatio="false" style="-fx-background-color: #282A36;">
          <image>
             <Image url="@../image/Grass.png" />
          </image>
@@ -40,14 +40,18 @@
       <Rectangle fx:id="bgCube" arcHeight="5.0" arcWidth="5.0" fill="#64e388e3" height="200.0" layoutX="587.0" layoutY="250.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Pane layoutX="917.0" layoutY="525.0" opacity="0.7" prefHeight="162.0" prefWidth="408.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 10px;">
          <children>
-            <Button fx:id="pauseButton" layoutX="32.0" layoutY="45.0" mnemonicParsing="false" onAction="#pauseHandle" prefHeight="72.0" prefWidth="156.0" style="-fx-background-color: #c59a7d;" text="PAUSE" textFill="#18191f">
+            <Text fill="#c59a7d" layoutX="103.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Static Friction Coefficient" wrappingWidth="219.47265625">
                <font>
-                  <Font name="Segoe UI Bold" size="15.0" />
-               </font></Button>
-            <Button layoutX="217.0" layoutY="44.0" mnemonicParsing="false" onAction="#resetBtnPressed" prefHeight="72.0" prefWidth="156.0" style="-fx-background-color: #c59a7d;" text="RESET" textFill="#18191f">
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Text>
+            <Slider fx:id="staticSlider" blockIncrement="0.1" layoutX="143.0" layoutY="34.0" majorTickUnit="0.1" max="0.5" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="0.25" />
+            <Text fill="#c59a7d" layoutX="103.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kinetic Friction Coefficient" wrappingWidth="232.0">
                <font>
-                  <Font name="Segoe UI Bold" size="15.0" />
-               </font></Button>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Text>
+            <Slider fx:id="kineticSlider" blockIncrement="0.1" layoutX="143.0" layoutY="110.0" majorTickUnit="0.1" max="0.5" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="0.25" />
          </children>
       </Pane>
       <Circle fx:id="bgCylinder" fill="#66e389e1" layoutX="687.0" layoutY="350.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
@@ -164,18 +168,6 @@
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </CheckBox>
-            <Text fill="#eeeeee" layoutX="42.0" layoutY="262.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Static Friction Coefficient" wrappingWidth="219.47265625">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Text>
-            <Slider fx:id="staticSlider" blockIncrement="0.1" layoutX="82.0" layoutY="278.0" majorTickUnit="0.1" max="0.5" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="0.25" />
-            <Slider fx:id="kineticSlider" blockIncrement="0.1" layoutX="82.0" layoutY="355.0" majorTickUnit="0.1" max="0.5" minorTickCount="1" showTickLabels="true" showTickMarks="true" value="0.25" />
-            <Text fill="#eeeeee" layoutX="36.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kinetic Friction Coefficient" wrappingWidth="232.0">
-               <font>
-                  <Font name="Arial Bold" size="18.0" />
-               </font>
-            </Text>
             <CheckBox fx:id="accelerationBox" layoutX="28.0" layoutY="195.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="201.0" text="Acceleration" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
@@ -240,15 +232,23 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="478.0" layoutY="525.0" opacity="0.7" prefHeight="162.0" prefWidth="408.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 10px;">
+      <Pane layoutX="478.0" layoutY="525.0" opacity="0.7" prefHeight="184.0" prefWidth="408.0" style="-fx-background-color: #eeeeee; -fx-background-radius: 10px;">
          <children>
             <Slider fx:id="forceSlider" layoutX="38.0" layoutY="37.0" max="300.0" min="-300.0" prefHeight="89.0" prefWidth="337.0" showTickLabels="true" showTickMarks="true" />
-            <TextField fx:id="forceValue" alignment="CENTER" layoutX="132.0" layoutY="114.0" promptText="0.0" style="-fx-background-color: #c59a7d; -fx-text-fill: #000000;" />
+            <TextField fx:id="forceValue" alignment="CENTER" layoutX="132.0" layoutY="101.0" promptText="0.0" style="-fx-background-color: #c59a7d; -fx-text-fill: #000000;" />
             <Text fill="#c59a7d" layoutX="114.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Applied Force">
                <font>
                   <Font name="Segoe UI Light" size="32.0" />
                </font>
             </Text>
+            <Button fx:id="pauseButton" layoutX="77.0" layoutY="133.0" mnemonicParsing="false" onAction="#pauseHandle" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #c59a7d;" text="PAUSE" textFill="#18191f">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font></Button>
+            <Button layoutX="227.0" layoutY="133.0" mnemonicParsing="false" onAction="#resetBtnPressed" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #c59a7d;" text="RESET" textFill="#18191f">
+               <font>
+                  <Font name="Segoe UI Bold" size="15.0" />
+               </font></Button>
          </children>
       </Pane>
   
