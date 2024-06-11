@@ -69,6 +69,10 @@ public class Cylinder extends ObjectType {
         {
             this.angularAcceleration = -2*this.getNormalForceMagnitude()*this.surface.getStaticFrictionCoef()/(this.getMass()*radius*radius);
         }
+        if(Math.abs(this.actorForce.getMagnitude()) <= Math.abs(this.normalForce.getMagnitude()) * this.surface.getStaticFrictionCoef())
+        {
+            this.angularAcceleration = 0;
+        }
     }
 }
 
