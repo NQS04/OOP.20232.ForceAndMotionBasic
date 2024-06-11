@@ -62,12 +62,12 @@ public class Cylinder extends ObjectType {
         if ( Math.abs(this.actorForce.getMagnitude()) >= Math.abs(this.normalForce.getMagnitude()) * this.surface.getStaticFrictionCoef()
         && Math.abs(this.getVelocity()) >= 0.01)
         {
-            this.angularAcceleration = 2*this.getNormalForce()*this.surface.getStaticFrictionCoef()/(this.getMass()*radius*radius);
+            this.angularAcceleration = 2*this.getNormalForceMagnitude()*this.surface.getStaticFrictionCoef()/(this.getMass()*radius*radius);
         }
         if ( Math.abs(this.actorForce.getMagnitude()) >= Math.abs(this.normalForce.getMagnitude()) * this.surface.getStaticFrictionCoef()
         && this.getVelocity() <0.01)
         {
-            this.angularAcceleration = -2*this.getNormalForce()*this.surface.getStaticFrictionCoef()/(this.getMass()*radius*radius);
+            this.angularAcceleration = -2*this.getNormalForceMagnitude()*this.surface.getStaticFrictionCoef()/(this.getMass()*radius*radius);
         }
     }
 }

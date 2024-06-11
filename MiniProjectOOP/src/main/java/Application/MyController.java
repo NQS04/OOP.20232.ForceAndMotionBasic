@@ -503,8 +503,8 @@ public class MyController implements Initializable {
 		}
 	}
 
-	public void updateTransition(ObjectType obj, long elastedNanoSecond) {
-		double elastedSecond = elastedNanoSecond  / 1_000_000_000.0;
+	public void updateTransition(ObjectType obj, long lastedNanoSecond) {
+		double elastedSecond = lastedNanoSecond  / 1_000_000_000.0;
 		double old_x = obj.getX();
 		double oldAngularPos = obj.getAngularPosition();
 		obj.proceed(elastedSecond);

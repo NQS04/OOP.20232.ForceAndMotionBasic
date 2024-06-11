@@ -22,10 +22,6 @@ public abstract class ObjectType {
     protected double angularVelocity;
     protected double angularAcceleration;
 
-    public double getNormalForce()
-    {
-        return normalForce.getMagnitude();
-    }
     public double getMass() {
         return mass;
     }
