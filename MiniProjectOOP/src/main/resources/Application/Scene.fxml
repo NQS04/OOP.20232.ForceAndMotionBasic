@@ -143,32 +143,32 @@
       </Label>
       <Pane layoutX="1021.0" layoutY="31.0" opacity="0.7" prefHeight="403.0" prefWidth="304.0" style="-fx-background-color: #000000; -fx-background-radius: 10px;">
          <children>
-            <CheckBox fx:id="forcesBox" layoutX="28.0" layoutY="21.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Forces" textFill="#eeeeee">
+            <CheckBox fx:id="forcesBox" layoutX="28.0" layoutY="25.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Forces" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="sumForcesBox" layoutX="28.0" layoutY="55.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Sum of Forces" textFill="#eeeeee">
+            <CheckBox fx:id="sumForcesBox" layoutX="28.0" layoutY="81.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="173.0" text="Sum of Forces" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="valuesBox" layoutX="28.0" layoutY="90.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Values" textFill="#eeeeee">
+            <CheckBox fx:id="valuesBox" layoutX="28.0" layoutY="142.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="165.0" text="Values" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="massBox" layoutX="28.0" layoutY="125.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="137.0" text="Mass" textFill="#eeeeee">
+            <CheckBox fx:id="massBox" layoutX="28.0" layoutY="201.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="137.0" text="Mass" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="speedBox" layoutX="28.0" layoutY="160.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="137.0" text="Speed" textFill="#eeeeee">
+            <CheckBox fx:id="speedBox" layoutX="28.0" layoutY="261.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="137.0" text="Speed" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="accelerationBox" layoutX="28.0" layoutY="195.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="201.0" text="Acceleration" textFill="#eeeeee">
+            <CheckBox fx:id="accelerationBox" layoutX="28.0" layoutY="320.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="201.0" text="Acceleration" textFill="#eeeeee">
                <font>
                   <Font name="Arial Bold" size="18.0" />
                </font>
