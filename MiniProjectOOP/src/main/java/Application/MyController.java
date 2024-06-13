@@ -515,8 +515,8 @@ public class MyController implements Initializable {
 			ls1.setX(-BACKGROUND_WIDTH);
 			ls2.setX(-BACKGROUND_WIDTH);
 		} else {
-			ls1.setX(ls1.getX() - (obj.getX() - old_x)*40);
-			ls2.setX(ls2.getX() - (obj.getX() - old_x)*40);
+			ls1.setX(ls1.getX() - (obj.getX() - old_x)*10);
+			ls2.setX(ls2.getX() - (obj.getX() - old_x)*10);
 		}
 		if (bg1.getX() - (obj.getX() - old_x)*10 < -BACKGROUND_WIDTH) {
 			bg1.setX(0);
@@ -550,9 +550,9 @@ public class MyController implements Initializable {
 		Label labelSidelength = new Label("Side length (m): ");
 		Label labelRadius = new Label("Radius (m): ");
 
-		labelMass.setTextFill(Paint.valueOf("#8be9fd"));
-		labelSidelength.setTextFill(Paint.valueOf("#8be9fd"));
-		labelRadius.setTextFill(Paint.valueOf("#8be9fd"));
+		labelMass.setTextFill(Paint.valueOf("#eeeeee"));
+		labelSidelength.setTextFill(Paint.valueOf("#eeeeee"));
+		labelRadius.setTextFill(Paint.valueOf("#eeeeee"));
 
 		TextField txtMass = new TextField();
 		TextField txtLength = new TextField();
