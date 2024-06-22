@@ -5,8 +5,8 @@
 
 ## Contributors
 
-| Name | Assignment |
-|---|---------------------|
-| Le Minh Nam | <ul> <li> Package: Application </li> <li> Controller and GUI </li> <li> Presentation </li> <li> Report </li> </ul>|
-| Nguy Quang Son | <ul> <li> Package: force, object </li> <li> Controller </li> <li> UML Diagram </li>  <li> Report and Slides </li> </ul>|
-| Nguyen Long Vu | <ul> <li> Package: force, object </li> <li> Controller and GUI </li> <li> Class Diagram </li> <li> Report</li> </ul>|
+| Name | Assignment                                                                                                                    |
+|---|-------------------------------------------------------------------------------------------------------------------------------|
+| Le Minh Nam | <ul> <li> Package: Application </li> <li> Controller and GUI </li> <li> Slide </li> <li> Report </li> </ul>                   |
+| Nguy Quang Son | <ul> <li> Package: force, object </li> <li> Controller </li> <li> UML Diagram </li>  <li> Report and Presentation </li> </ul> |
+| Nguyen Long Vu | <ul> <li> Package: force, object </li> <li> Controller and GUI </li> <li> Class Diagram </li> <li> Report</li> </ul>          |
