@@ -7,6 +7,6 @@
 
 | Name | Assignment                                                                                                                    |
 |---|-------------------------------------------------------------------------------------------------------------------------------|
-| Le Minh Nam | <ul> <li> Package: Application </li> <li> Controller and GUI </li> <li> Slide </li> <li> Report </li> </ul>                   |
+| Le Minh Nam | <ul> <li> Package: Application </li> <li> Controller and GUI </li> <li> Slide </li> <li> Report and Presentation </li> </ul>                   |
 | Nguy Quang Son | <ul> <li> Package: force, object </li> <li> Controller </li> <li> UML Diagram </li>  <li> Report and Presentation </li> </ul> |
 | Nguyen Long Vu | <ul> <li> Package: force, object </li> <li> Controller and GUI </li> <li> Class Diagram </li> <li> Report</li> </ul>          |
